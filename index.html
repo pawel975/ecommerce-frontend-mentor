@@ -21,7 +21,9 @@
       <nav id="nav__bar">
         <img src="./images/icon-menu.svg" alt="" id="hamburger__menu" />
         <img src="./images/logo.svg" alt="" id="logo" />
-        <img src="./images/icon-cart.svg" alt="" id="cart" />
+        <div id="cartContainer">
+          <img src="./images/icon-cart.svg" alt="" id="cart" />
+        </div>
         <img src="./images/image-avatar.png" alt="" id="avatar" />
       </nav>
 
@@ -84,9 +86,17 @@
           <h4 id="previous__price">$250.00</h4>
         </div>
         <div id="amount__section">
-          <img src="./images/icon-minus.svg" alt="" class="change__amount" />
-          <h4 id="amount">0</h4>
-          <img src="./images/icon-plus.svg" alt="" class="change__amount" />
+          <img
+            src="./images/icon-minus.svg"
+            alt=""
+            class="change__amount minus"
+          />
+          <h4 id="amount"></h4>
+          <img
+            src="./images/icon-plus.svg"
+            alt=""
+            class="change__amount plus"
+          />
         </div>
         <button id="add__to__cart">Add to cart</button>
       </section>

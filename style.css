@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+#container {
+  width: 100%;
+  height: auto;
+  /* outline: 4px solid green; */
+  overflow: hidden;
+}
+
+#hamburger__menu,
+#logo,
+#cart,
+#avatar {
+  padding: 10px;
+}
+
+#nav__bar {
+  padding: 30px 10px 35px 10px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  outline: 2px solid black;
+}
+
+#logo {
+  margin-right: auto;
+}
+
+#avatar {
+  height: inherit;
+}
+
+#menu {
+  display: none;
+}
+
+#slider__container {
+  position: relative;
+  width: 100%;
+}
+
+#slider {
+  transition: 0.5s;
+  position: relative;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.change__photo__wrapper {
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.change__photo__wrapper.left {
+  transform: translate(0, -50%);
+  top: 50%;
+  position: absolute;
+  left: 5%;
+  background: white;
+}
+
+.change__photo__wrapper.right {
+  transform: translate(0, -50%);
+  top: 50%;
+  position: absolute;
+  right: 5%;
+  background: white;
+}
+
+.change__photo {
+  background: white;
+  width: 15px;
+  height: 15px;
+}
+
+#slider .product__photo {
+  width: inherit;
+}
+
+#info {
+  margin: auto;
+  margin-top: 10px;
+  /* outline: 2px solid green; */
+  width: 90%;
+}
+
+#sneaker__company {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#sneaker__title {
+  width: 80%;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#sneaker__description {
+  margin: 10px 0;
+  color: grey;
+  font-size: 14px;
+}
+
+#pricing {
+  display: flex;
+  align-items: center;
+}
+
+#discount__percent {
+  padding: 5px;
+  font-size: 14px;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+#previous__price {
+  color: lightgrey;
+  text-decoration: line-through;
+}
+
+#amount__section {
+  margin: 10px 0;
+  display: flex;
+  height: 60px;
+  padding: 0px 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: hsl(223, 64%, 98%);
+}
+
+#add__to__cart {
+  position: relative;
+  border-radius: 10px;
+  padding: 15px 0;
+  color: white;
+  font-weight: 700;
+  background-color: hsl(26, 100%, 55%);
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add__to__cart::before {
+  transform: translate(-50%, -50%);
+  margin: 0px 20px;
+  content: url("./images/icon-cart-button.svg");
+  color: white;
+  width: 10px;
+  height: 10px;
+}

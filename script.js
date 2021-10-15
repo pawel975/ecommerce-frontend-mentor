@@ -7,6 +7,7 @@ let sliderPosition = 0;
 let buyingAmount = 0;
 let cartAmount = 0;
 let isCartActive = false;
+let isDrawerActive = false;
 
 amount.textContent = buyingAmount;
 
@@ -34,8 +35,10 @@ function checkChangeAmountDisabled() {
   }
 }
 
-function updateCartAmount() {
+function updateCartSummary() {
   cartAmount += buyingAmount;
+  content__amount.textContent = cartAmount;
+  content__final__price.textContent = "$" + content__amount.textContent * 125;
   cart__amount.textContent = cartAmount;
   buyingAmount = 0;
   amount.textContent = buyingAmount;
@@ -53,7 +56,7 @@ function checkCart() {
   }
 }
 
-function checkBasketActive() {
+function checkCartActive() {
   if (isCartActive) {
     cart__modal.style.display = "initial";
   } else {
@@ -61,11 +64,22 @@ function checkBasketActive() {
   }
 }
 
+function activateDrawer() {
+  isDrawerActive = !isDrawerActive;
+  if (isDrawerActive) {
+    side__drawer__background.style.display = "initial";
+    side__drawer.style.left = "0%";
+  } else {
+    side__drawer__background.style.display = "none";
+    side__drawer.style.left = "-70%";
+  }
+}
+
 checkSlideDisabled();
 checkChangeAmountDisabled();
-updateCartAmount();
+updateCartSummary();
 checkCart();
-checkBasketActive();
+checkCartActive();
 
 nextImage.addEventListener("click", function () {
   if (sliderPosition > -300) {
@@ -96,12 +110,50 @@ plusAmount.addEventListener("click", function () {
 });
 
 add__to__cart.addEventListener("click", function () {
-  updateCartAmount();
+  updateCartSummary();
   checkChangeAmountDisabled();
   checkCart();
 });
 
 cart.addEventListener("click", function () {
   isCartActive = !isCartActive;
-  checkBasketActive();
+  checkCartActive();
+});
+
+document.addEventListener("click", function (e) {
+  const idList = [
+    "add__to__cart",
+    "cart",
+    "cart__modal",
+    "title__modal",
+    "shopping__area",
+    "cart__content__empty",
+    "cart__content__empty__info",
+    "cart__content",
+    "content__name",
+    "content__price",
+    "content__amount",
+    "content__final__price",
+    "content__checkout",
+    "delete__content",
+  ];
+  if (e.target.classList[0] == "change__amount") return;
+  else if (idList.indexOf(e.target.id) !== -1) return;
+  else {
+    isCartActive = false;
+    checkCartActive();
+  }
+});
+
+delete__content.addEventListener("click", function () {
+  cartAmount = 0;
+  checkCart();
+  updateCartSummary();
+});
+
+hamburger__menu.addEventListener("click", activateDrawer);
+
+document.addEventListener("click", function (e) {
+  if (e.target.id == "side__drawer__background") activateDrawer();
+  else return;
 });

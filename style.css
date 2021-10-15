@@ -114,11 +114,11 @@ hr {
   width: fit-content;
   height: 150px;
   display: grid;
-  grid-template-columns: 15% 5% 60% 5% 15%;
+  grid-template-columns: 15% 5% 70% 5% 5%;
   grid-template-rows: 18% 22% 14% 35%;
   grid-template-areas:
-    "thumbnail__photo . content__name . delete__icon"
-    "thumbnail__photo . content__price . delete__icon"
+    "thumbnail__photo . content__name . delete__content"
+    "thumbnail__photo . content__price . delete__content"
     ". . . . ."
     "content__checkout content__checkout content__checkout content__checkout content__checkout";
 }
@@ -131,7 +131,7 @@ hr {
 #content__name {
   grid-area: content__name;
   width: 100%;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
 }
 #content__price {
@@ -139,13 +139,10 @@ hr {
   width: 100%;
   height: 100%;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
 }
-#delete__icon {
-  grid-area: delete__icon;
-  width: 100%;
-  height: 100%;
-  padding: 15px 15px;
+#delete__content {
+  grid-area: delete__content;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -288,6 +285,8 @@ hr {
   align-items: center;
   justify-content: center;
   margin-bottom: 2em;
+}
+#add__to__cart:hover {
   box-shadow: 0px 28px 28px -20px rgba(255, 121, 26, 1);
 }
 
@@ -298,4 +297,29 @@ hr {
   color: white;
   width: 10px;
   height: 10px;
+}
+
+#side__drawer__background {
+  z-index: 1000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  left: 50%;
+  top: 0;
+  position: absolute;
+  transform: translate(-50%, 0%);
+  display: none;
+}
+
+#side__drawer {
+  transition: 0.5s;
+  transform: translate(0%, 0%);
+  height: 100%;
+  width: 70%;
+  z-index: 1001;
+  position: absolute;
+  top: 0;
+  left: -70%;
+  background: white;
 }

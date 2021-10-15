@@ -22,10 +22,35 @@
         <img src="./images/icon-menu.svg" alt="" id="hamburger__menu" />
         <img src="./images/logo.svg" alt="" id="logo" />
         <div id="cartContainer">
+          <div id="cart__amount"></div>
           <img src="./images/icon-cart.svg" alt="" id="cart" />
         </div>
         <img src="./images/image-avatar.png" alt="" id="avatar" />
       </nav>
+
+      <section id="cart__modal">
+        <h4 id="title__modal">Cart</h4>
+        <hr />
+        <div id="shopping__area">
+          <div id="cart__content__empty">
+            <h4 id="cart__content__empty__info">Your cart is empty</h4>
+          </div>
+          <div id="cart__content">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt=""
+              id="thumbnail__photo"
+            />
+            <h4 id="content__name">Autumn Limited Edition...</h4>
+            <h4 id="content__price">
+              $125 x <span id="content__amount">0</span>
+              <span id="content__final__price">0</span>
+            </h4>
+            <img src="./images/icon-delete.svg" alt="" id="delete__icon" />
+            <button id="content__checkout">Checkout</button>
+          </div>
+        </div>
+      </section>
 
       <section id="slider__container">
         <div class="change__photo__wrapper left">

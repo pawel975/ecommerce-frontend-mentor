@@ -6,6 +6,7 @@ const plusAmount = document.querySelector(".change__amount.plus");
 let sliderPosition = 0;
 let buyingAmount = 0;
 let cartAmount = 0;
+let isCartActive = false;
 
 amount.textContent = buyingAmount;
 
@@ -33,16 +34,38 @@ function checkChangeAmountDisabled() {
   }
 }
 
-checkSlideDisabled();
-checkChangeAmountDisabled();
-
-function checkCartAmount() {
-  if (cartAmount == 0) cartContainer.setAttribute("cart-show", "none");
+function updateCartAmount() {
+  cartAmount += buyingAmount;
+  cart__amount.textContent = cartAmount;
+  buyingAmount = 0;
+  amount.textContent = buyingAmount;
+  if (cartAmount == 0) cart__amount.style.display = "none";
+  else cart__amount.style.display = "initial";
 }
 
-// change cart quantity in before element to simple div
+function checkCart() {
+  if (cartAmount == 0) {
+    cart__content.style.display = "none";
+    cart__content__empty.style.display = "initial";
+  } else {
+    cart__content.style.display = "grid";
+    cart__content__empty.style.display = "none";
+  }
+}
 
-checkCartAmount();
+function checkBasketActive() {
+  if (isCartActive) {
+    cart__modal.style.display = "initial";
+  } else {
+    cart__modal.style.display = "none";
+  }
+}
+
+checkSlideDisabled();
+checkChangeAmountDisabled();
+updateCartAmount();
+checkCart();
+checkBasketActive();
 
 nextImage.addEventListener("click", function () {
   if (sliderPosition > -300) {
@@ -73,10 +96,12 @@ plusAmount.addEventListener("click", function () {
 });
 
 add__to__cart.addEventListener("click", function () {
-  cartAmount += buyingAmount;
-  buyingAmount = 0;
-  amount.textContent = buyingAmount;
-  console.log(cartContainer);
-  cartContainer.setAttribute("cart-amount", cartAmount);
+  updateCartAmount();
   checkChangeAmountDisabled();
+  checkCart();
+});
+
+cart.addEventListener("click", function () {
+  isCartActive = !isCartActive;
+  checkBasketActive();
 });

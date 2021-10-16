@@ -19,13 +19,13 @@
   <body>
     <div id="container">
       <nav id="nav__bar">
-        <img src="./images/icon-menu.svg" alt="" id="hamburger__menu" />
-        <img src="./images/logo.svg" alt="" id="logo" />
+        <img src="./images/icon-menu.svg" alt="menu" id="hamburger__menu" />
+        <img src="./images/logo.svg" alt="Sneakers" id="logo" />
         <div id="cartContainer">
           <div id="cart__amount"></div>
-          <img src="./images/icon-cart.svg" alt="" id="cart" />
+          <img src="./images/icon-cart.svg" alt="Cart" id="cart" />
         </div>
-        <img src="./images/image-avatar.png" alt="" id="avatar" />
+        <img src="./images/image-avatar.png" alt="User Image" id="avatar" />
       </nav>
 
       <section id="cart__modal">
@@ -38,7 +38,7 @@
           <div id="cart__content">
             <img
               src="./images/image-product-1-thumbnail.jpg"
-              alt=""
+              alt="Product photo"
               id="thumbnail__photo"
             />
             <h4 id="content__name">Autumn Limited Edition...</h4>
@@ -49,7 +49,11 @@
                 style="font-weight: bold; color: black"
               ></span>
             </h4>
-            <img src="./images/icon-delete.svg" alt="" id="delete__content" />
+            <img
+              src="./images/icon-delete.svg"
+              alt="delete"
+              id="delete__content"
+            />
             <button id="content__checkout">Checkout</button>
           </div>
         </div>
@@ -59,34 +63,38 @@
         <div class="change__photo__wrapper left">
           <img
             src="./images/icon-previous.svg"
-            alt=""
+            alt="previous photo"
             class="change__photo previous"
           />
         </div>
         <section id="slider">
           <img
             src="./images/image-product-1.jpg"
-            alt=""
+            alt="product"
             class="product__photo"
           />
           <img
             src="./images/image-product-2.jpg"
-            alt=""
+            alt="product"
             class="product__photo"
           />
           <img
             src="./images/image-product-3.jpg"
-            alt=""
+            alt="product"
             class="product__photo"
           />
           <img
             src="./images/image-product-4.jpg"
-            alt=""
+            alt="product"
             class="product__photo"
           />
         </section>
         <div class="change__photo__wrapper right">
-          <img src="./images/icon-next.svg" alt="" class="change__photo next" />
+          <img
+            src="./images/icon-next.svg"
+            alt="next photo"
+            class="change__photo next"
+          />
         </div>
       </section>
 
@@ -106,32 +114,32 @@
         <div id="amount__section">
           <img
             src="./images/icon-minus.svg"
-            alt=""
+            alt="less quantity"
             class="change__amount minus"
           />
           <h4 id="amount"></h4>
           <img
             src="./images/icon-plus.svg"
-            alt=""
+            alt="more quantity"
             class="change__amount plus"
           />
         </div>
         <button id="add__to__cart">Add to cart</button>
       </section>
-
-      <script src="script.js"></script>
     </div>
 
     <div id="side__drawer__background"></div>
 
     <section id="side__drawer">
+      <img src="./images/icon-close.svg" alt="close" id="close__drawer" />
       <ul id="drawer__options">
-        <li class="drawe__single__option">Collections</li>
-        <li class="drawe__single__option">Men</li>
-        <li class="drawe__single__option">Women</li>
-        <li class="drawe__single__option">About</li>
-        <li class="drawe__single__option">Contact</li>
+        <li class="drawer__single__option">Collections</li>
+        <li class="drawer__single__option">Men</li>
+        <li class="drawer__single__option">Women</li>
+        <li class="drawer__single__option">About</li>
+        <li class="drawer__single__option">Contact</li>
       </ul>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

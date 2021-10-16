@@ -152,6 +152,7 @@ delete__content.addEventListener("click", function () {
 });
 
 hamburger__menu.addEventListener("click", activateDrawer);
+close__drawer.addEventListener("click", activateDrawer);
 
 document.addEventListener("click", function (e) {
   if (e.target.id == "side__drawer__background") activateDrawer();

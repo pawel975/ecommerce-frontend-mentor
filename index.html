@@ -21,11 +21,20 @@
       <nav id="nav__bar">
         <img src="./images/icon-menu.svg" alt="menu" id="hamburger__menu" />
         <img src="./images/logo.svg" alt="Sneakers" id="logo" />
-        <div id="cartContainer">
+        <ul id="navigation__options">
+          <li class="navigation__single__option">Collections</li>
+          <li class="navigation__single__option">Men</li>
+          <li class="navigation__single__option">Women</li>
+          <li class="navigation__single__option">About</li>
+          <li class="navigation__single__option">Contact</li>
+        </ul>
+        <div id="cart__container">
           <div id="cart__amount"></div>
           <img src="./images/icon-cart.svg" alt="Cart" id="cart" />
         </div>
-        <img src="./images/image-avatar.png" alt="User Image" id="avatar" />
+        <div id="avatar__container">
+          <img src="./images/image-avatar.png" alt="User Image" id="avatar" />
+        </div>
       </nav>
 
       <section id="cart__modal">
@@ -96,9 +105,32 @@
             class="change__photo next"
           />
         </div>
+
+        <div id="thumbnails__container">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="photo of shoes"
+            id="thumbnail__1"
+          />
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="photo of shoes"
+            id="thumbnail__2"
+          />
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="photo of shoes"
+            id="thumbnail__3"
+          />
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="photo of shoes"
+            id="thumbnail__4"
+          />
+        </div>
       </section>
 
-      <section id="info">
+      <div id="info">
         <h4 id="sneaker__company">SNEAKER COMPANY</h4>
         <h2 id="sneaker__title">Fall Limited Edition Sneakers</h2>
         <p id="sneaker__description">
@@ -125,7 +157,7 @@
           />
         </div>
         <button id="add__to__cart">Add to cart</button>
-      </section>
+      </div>
     </div>
 
     <div id="side__drawer__background"></div>
@@ -140,6 +172,7 @@
         <li class="drawer__single__option">Contact</li>
       </ul>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>

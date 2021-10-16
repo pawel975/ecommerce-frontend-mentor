@@ -21,9 +21,13 @@ body {
 #hamburger__menu,
 #logo,
 #cart,
-#avatar {
+#avatar__container {
   padding: 10px;
   position: relative;
+}
+
+#cart {
+  opacity: 0.5;
 }
 
 #nav__bar {
@@ -33,14 +37,18 @@ body {
   height: 50px;
   display: flex;
   align-items: center;
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
 }
 
 #logo {
   margin-right: auto;
 }
 
-#cartContainer {
+#navigation__options {
+  display: none;
+}
+
+#cart__container {
   position: relative;
 }
 
@@ -58,8 +66,20 @@ body {
   line-height: 15px;
 }
 
+#avatar__container {
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #avatar {
   height: inherit;
+  border-radius: 50px;
+}
+
+#avatar:hover {
+  box-shadow: 0px 0px 10px hsl(26, 100%, 55%);
 }
 
 #menu {
@@ -167,6 +187,10 @@ hr {
   width: 100%;
 }
 
+#thumbnails__container {
+  display: none;
+}
+
 #slider {
   transition: 0.3s;
   position: relative;
@@ -260,7 +284,8 @@ hr {
 }
 
 #amount__section {
-  margin: 10px 0;
+  max-width: 375px;
+  margin: 10px auto;
   display: flex;
   height: 60px;
   padding: 0px 15px;
@@ -271,6 +296,8 @@ hr {
 }
 
 #add__to__cart {
+  max-width: 375px;
+  margin: 10px auto;
   position: relative;
   border-radius: 10px;
   padding: 15px 0;
@@ -310,7 +337,6 @@ hr {
   position: absolute;
   transform: translate(-50%, 0%);
   display: none;
-  /* change display to none */
 }
 
 #side__drawer {
@@ -335,3 +361,148 @@ hr {
   justify-content: space-around;
   height: 200px;
 }
+
+@media (min-width: 950px) {
+  * {
+    outline: 2px solid black;
+  }
+  #container {
+    padding: 0rem 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr;
+    grid-template-areas:
+      "nav__bar nav__bar"
+      "slider__container info";
+  }
+
+  #slider__container {
+    margin: 5rem;
+    width: 80%;
+  }
+
+  #slider__container img {
+    border-radius: 10px;
+  }
+
+  #thumbnails__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #thumbnails__container img {
+    width: 20%;
+    margin: 20px 0;
+  }
+
+  #nav__bar {
+    grid-area: nav__bar;
+    padding: 0;
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  #hamburger__menu {
+    display: none;
+  }
+
+  #logo {
+    margin-right: 3em;
+  }
+
+  #navigation__options {
+    /* outline: 2px solid black; */
+    display: flex;
+    margin-right: auto;
+    list-style: none;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    height: inherit;
+  }
+
+  .navigation__single__option:hover {
+    border-bottom: 4px solid hsl(26, 100%, 55%);
+  }
+  .navigation__single__option {
+    height: 100%;
+    line-height: 80px;
+  }
+
+  #slider__container {
+    grid-area: slider__container;
+    overflow: hidden;
+  }
+
+  .change__photo__wrapper {
+    display: none;
+  }
+
+  #info {
+    grid-area: info;
+    margin: auto auto;
+    padding: 3rem 1rem 3rem 3rem;
+    outline: 2px solid black;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  /* info media */
+  #sneaker__company {
+    font-size: 14px;
+  }
+
+  #sneaker__title {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+  #sneaker__description {
+    margin: 2rem 0;
+    color: rgb(117, 110, 110);
+    font-size: 16px;
+  }
+
+  #pricing {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #previous__price {
+    margin: 5px 0;
+  }
+
+  #amount__section {
+    width: 50%;
+    max-width: 150px;
+    /* margin: 10px auto; */
+  }
+
+  #discount__percent {
+    margin-right: 200px;
+  }
+
+  #add__to__cart {
+    max-width: 275px;
+    height: 60px;
+  }
+  #add__to__cart:hover {
+    box-shadow: 0px 28px 28px -20px rgba(255, 121, 26, 1);
+  }
+
+  #add__to__cart::before {
+    transform: translate(-50%, -50%);
+    margin: 0px 20px;
+    content: url("./images/icon-cart-button.svg");
+    color: white;
+    width: 10px;
+    height: 10px;
+  }
+} ;

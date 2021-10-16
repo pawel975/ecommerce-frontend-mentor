@@ -75,6 +75,11 @@ function activateDrawer() {
   }
 }
 
+function checkCartHovered() {
+  if (isCartActive == true) cart.style.opacity = 1;
+  else cart.style.opacity = 0.5;
+}
+
 checkSlideDisabled();
 checkChangeAmountDisabled();
 updateCartSummary();
@@ -117,10 +122,12 @@ add__to__cart.addEventListener("click", function () {
 
 cart.addEventListener("click", function () {
   isCartActive = !isCartActive;
+  checkCartHovered();
   checkCartActive();
 });
 
 document.addEventListener("click", function (e) {
+  console.log(e.target);
   const idList = [
     "add__to__cart",
     "cart",
@@ -155,6 +162,7 @@ hamburger__menu.addEventListener("click", activateDrawer);
 close__drawer.addEventListener("click", activateDrawer);
 
 document.addEventListener("click", function (e) {
+  checkCartHovered();
   if (e.target.id == "side__drawer__background") activateDrawer();
   else return;
 });

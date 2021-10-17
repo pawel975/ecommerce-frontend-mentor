@@ -2,12 +2,17 @@ const previousImage = document.querySelector(".change__photo.previous");
 const nextImage = document.querySelector(".change__photo.next");
 const minusAmount = document.querySelector(".change__amount.minus");
 const plusAmount = document.querySelector(".change__amount.plus");
+const thumbnails = document.getElementsByClassName("thumbnail__main");
+const productPhoto = document.getElementsByClassName("product__photo");
 
 let sliderPosition = 0;
 let buyingAmount = 0;
 let cartAmount = 0;
 let isCartActive = false;
 let isDrawerActive = false;
+let isSliderModalActive = false;
+const thumbnailsArray = [...thumbnails];
+let windowWidth = window.innerWidth;
 
 amount.textContent = buyingAmount;
 
@@ -75,6 +80,17 @@ function activateDrawer() {
   }
 }
 
+function activateSliderModal() {
+  isSliderModalActive = !isSliderModalActive;
+  if (isSliderModalActive) {
+    slider__modal__background.style.display = "initial";
+    slider__modal__container.style.display = "relative";
+  } else {
+    slider__modal__background.style.display = "none";
+    slider__modal__container.style.display = "none";
+  }
+}
+
 function checkCartHovered() {
   if (isCartActive == true) cart.style.opacity = 1;
   else cart.style.opacity = 0.5;
@@ -127,7 +143,6 @@ cart.addEventListener("click", function () {
 });
 
 document.addEventListener("click", function (e) {
-  console.log(e.target);
   const idList = [
     "add__to__cart",
     "cart",
@@ -166,3 +181,24 @@ document.addEventListener("click", function (e) {
   if (e.target.id == "side__drawer__background") activateDrawer();
   else return;
 });
+
+thumbnailsArray.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", function () {
+    thumbnailsArray.forEach((thumbnail) =>
+      thumbnail.classList.remove("thumbnail__active")
+    );
+    thumbnail.classList.add("thumbnail__active");
+  });
+});
+
+window.addEventListener("resize", function () {
+  windowWidth = this.window.innerWidth;
+});
+
+if (windowWidth >= 1000) {
+  [...productPhoto].forEach((photo) => {
+    photo.addEventListener("click", function () {
+      activateSliderModal();
+    });
+  });
+}

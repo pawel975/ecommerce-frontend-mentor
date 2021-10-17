@@ -111,20 +111,24 @@
             src="./images/image-product-1-thumbnail.jpg"
             alt="photo of shoes"
             id="thumbnail__1"
+            class="thumbnail__main thumbnail__active"
           />
           <img
             src="./images/image-product-2-thumbnail.jpg"
             alt="photo of shoes"
+            class="thumbnail__main"
             id="thumbnail__2"
           />
           <img
             src="./images/image-product-3-thumbnail.jpg"
             alt="photo of shoes"
+            class="thumbnail__main"
             id="thumbnail__3"
           />
           <img
             src="./images/image-product-4-thumbnail.jpg"
             alt="photo of shoes"
+            class="thumbnail__main"
             id="thumbnail__4"
           />
         </div>
@@ -143,20 +147,22 @@
           <h4 id="discount__percent">50%</h4>
           <h4 id="previous__price">$250.00</h4>
         </div>
-        <div id="amount__section">
-          <img
-            src="./images/icon-minus.svg"
-            alt="less quantity"
-            class="change__amount minus"
-          />
-          <h4 id="amount"></h4>
-          <img
-            src="./images/icon-plus.svg"
-            alt="more quantity"
-            class="change__amount plus"
-          />
-        </div>
-        <button id="add__to__cart">Add to cart</button>
+        <section id="amount__to__cart">
+          <div id="amount__section">
+            <img
+              src="./images/icon-minus.svg"
+              alt="less quantity"
+              class="change__amount minus"
+            />
+            <h4 id="amount"></h4>
+            <img
+              src="./images/icon-plus.svg"
+              alt="more quantity"
+              class="change__amount plus"
+            />
+          </div>
+          <button id="add__to__cart">Add to cart</button>
+        </section>
       </div>
     </div>
 
@@ -171,6 +177,74 @@
         <li class="drawer__single__option">About</li>
         <li class="drawer__single__option">Contact</li>
       </ul>
+    </section>
+
+    <div id="slider__modal__background"></div>
+
+    <section id="slider__modal__container">
+      <div class="change__photo__wrapper left">
+        <img
+          src="./images/icon-previous.svg"
+          alt="previous photo"
+          class="change__photo previous"
+        />
+      </div>
+      <section id="slider">
+        <img
+          src="./images/image-product-1.jpg"
+          alt="product"
+          class="product__photo"
+        />
+        <img
+          src="./images/image-product-2.jpg"
+          alt="product"
+          class="product__photo"
+        />
+        <img
+          src="./images/image-product-3.jpg"
+          alt="product"
+          class="product__photo"
+        />
+        <img
+          src="./images/image-product-4.jpg"
+          alt="product"
+          class="product__photo"
+        />
+      </section>
+      <div class="change__photo__wrapper right">
+        <img
+          src="./images/icon-next.svg"
+          alt="next photo"
+          class="change__photo next"
+        />
+      </div>
+
+      <div id="thumbnails__container">
+        <img
+          src="./images/image-product-1-thumbnail.jpg"
+          alt="photo of shoes"
+          id="thumbnail__1"
+          class="thumbnail__main thumbnail__active"
+        />
+        <img
+          src="./images/image-product-2-thumbnail.jpg"
+          alt="photo of shoes"
+          class="thumbnail__main"
+          id="thumbnail__2"
+        />
+        <img
+          src="./images/image-product-3-thumbnail.jpg"
+          alt="photo of shoes"
+          class="thumbnail__main"
+          id="thumbnail__3"
+        />
+        <img
+          src="./images/image-product-4-thumbnail.jpg"
+          alt="photo of shoes"
+          class="thumbnail__main"
+          id="thumbnail__4"
+        />
+      </div>
     </section>
 
     <script src="script.js"></script>

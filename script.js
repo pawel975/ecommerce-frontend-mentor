@@ -84,7 +84,7 @@ function activateSliderModal() {
   isSliderModalActive = !isSliderModalActive;
   if (isSliderModalActive) {
     slider__modal__background.style.display = "initial";
-    slider__modal__container.style.display = "relative";
+    slider__modal__container.style.display = "initial";
   } else {
     slider__modal__background.style.display = "none";
     slider__modal__container.style.display = "none";
@@ -104,6 +104,7 @@ checkCartActive();
 
 nextImage.addEventListener("click", function () {
   if (sliderPosition > -300) {
+    slider.style.transition = "0.3s";
     sliderPosition -= 100;
     slider.style.left = sliderPosition + "%";
     checkSlideDisabled();
@@ -112,6 +113,7 @@ nextImage.addEventListener("click", function () {
 
 previousImage.addEventListener("click", function () {
   if (sliderPosition < 0) {
+    slider.style.transition = "0.3s";
     sliderPosition += 100;
     slider.style.left = sliderPosition + "%";
     checkSlideDisabled();
@@ -183,7 +185,10 @@ document.addEventListener("click", function (e) {
 });
 
 thumbnailsArray.forEach((thumbnail) => {
-  thumbnail.addEventListener("click", function () {
+  thumbnail.addEventListener("click", function (e) {
+    let thumbnailNumber = e.target.id.substr(e.target.id.length - 1) - 1;
+    slider.style.transition = "none";
+    slider.style.left = "-" + thumbnailNumber * 100 + "%";
     thumbnailsArray.forEach((thumbnail) =>
       thumbnail.classList.remove("thumbnail__active")
     );

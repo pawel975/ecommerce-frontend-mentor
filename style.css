@@ -386,9 +386,6 @@ hr {
 }
 
 @media (min-width: 1000px) {
-  * {
-    /* outline: 2px solid black; */
-  }
   #container {
     margin: auto;
     max-width: 1440px;
@@ -502,14 +499,21 @@ hr {
   }
 
   #pricing {
-    width: 200px;
+    font-size: 28px;
+    font-weight: 900;
+    width: 180px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
   #previous__price {
+    font-size: 20px;
     margin: 5px 0;
+  }
+
+  #discount__percent {
+    font-weight: 900;
   }
 
   #amount__section {

@@ -80,17 +80,6 @@ function activateDrawer() {
   }
 }
 
-function activateSliderModal() {
-  isSliderModalActive = !isSliderModalActive;
-  if (isSliderModalActive) {
-    slider__modal__background.style.display = "initial";
-    slider__modal__container.style.display = "initial";
-  } else {
-    slider__modal__background.style.display = "none";
-    slider__modal__container.style.display = "none";
-  }
-}
-
 function checkCartHovered() {
   if (isCartActive == true) cart.style.opacity = 1;
   else cart.style.opacity = 0.5;
@@ -199,11 +188,3 @@ thumbnailsArray.forEach((thumbnail) => {
 window.addEventListener("resize", function () {
   windowWidth = this.window.innerWidth;
 });
-
-if (windowWidth >= 1000) {
-  [...productPhoto].forEach((photo) => {
-    photo.addEventListener("click", function () {
-      activateSliderModal();
-    });
-  });
-}

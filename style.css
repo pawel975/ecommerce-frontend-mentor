@@ -22,6 +22,7 @@ body {
 #logo,
 #cart,
 #avatar__container {
+  cursor: pointer;
   padding: 10px;
   position: relative;
 }
@@ -170,6 +171,7 @@ hr {
   align-items: center;
 }
 #content__checkout {
+  cursor: pointer;
   height: inherit;
   grid-area: content__checkout;
   position: relative;
@@ -285,12 +287,13 @@ hr {
 }
 
 #amount__to__cart {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
 #amount__section {
-  width: 375px;
+  width: clamp(90%, 375px, 90%);
   margin: 10px auto;
   display: flex;
   height: 60px;
@@ -302,6 +305,7 @@ hr {
 }
 
 #add__to__cart {
+  cursor: pointer;
   max-width: 375px;
   margin: 10px auto;
   position: relative;
@@ -359,6 +363,7 @@ hr {
 }
 
 #drawer__options {
+  cursor: pointer;
   list-style: none;
   margin-top: 30px;
   font-weight: 700;
@@ -366,39 +371,6 @@ hr {
   flex-direction: column;
   justify-content: space-around;
   height: 200px;
-}
-
-#slider__modal__close {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 20%;
-  left: 68%;
-  z-index: 3000;
-}
-
-#slider__modal__background {
-  z-index: 1000;
-  opacity: 0.5;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  left: 50%;
-  top: 0;
-  position: absolute;
-  transform: translate(-50%, 0%);
-  display: none;
-}
-
-#slider__modal__container {
-  width: 500px;
-  height: 500px;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  overflow: hidden;
-  display: none;
-  z-index: 2500;
 }
 
 @media (min-width: 400px) {
@@ -586,5 +558,19 @@ hr {
 
   #side__drawer {
     display: none;
+  }
+
+  #slider__modal__background {
+    z-index: 1000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    display: none;
+    /* change to none when testing are finished */
   }
 } ;
